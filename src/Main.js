@@ -3,7 +3,10 @@ import HornedBeasts from './HornedBeast';
 import data from './data.json'; 
 
 
+
 class main extends React.Component {
+  
+ 
   render() { 
 
     let beastArr = []; 
