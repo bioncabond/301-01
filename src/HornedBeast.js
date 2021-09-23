@@ -45,7 +45,7 @@ class HornedBeasts extends React.Component {
     
     <div className="m-2">
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.image_url} />
+          <Card.Img variant="top" src={this.props.image_url} onClick={this.onAdd}/>
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
@@ -55,8 +55,8 @@ class HornedBeasts extends React.Component {
             {/* Ternary statement is a if/else rolled into one.  evaluation ? true : false  */}
             
 
-            <Button className="m-1" onClick={this.onAdd}>Add</Button>
-            <Button variant="danger" className="m-1" onClick={this.onRemove}>Remove</Button>
+            {/* <Button className="m-1" onClick={this.onAdd}>Add</Button>
+            <Button variant="danger" className="m-1" onClick={this.onRemove}>Remove</Button> */}
           </Card.Body>
         </Card>
       </div>
