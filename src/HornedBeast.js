@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-
+import SelectedBeast  from './selectedBeast';
 
 class HornedBeasts extends React.Component {
   
@@ -10,13 +10,22 @@ class HornedBeasts extends React.Component {
     //State must be an object {}
     this.state = {
       numberClicked: 0,
-      isFav: false
+      showModal: false
+      // isFav: false
     }
   }
   onAdd = () => {
     //how you set state
-    this.setState({ numberClicked: this.state.numberClicked + 1 });
+     
+    this.setState({ numberClicked: this.state.numberClicked + 1 })
+    let showModal2 = false;
+    (this.state.showModal) ? (showModal2=false) : (showModal2=true);
+      this.setState({showModal:showModal2});
+      console.log(this.state);
+    return <SelectedBeast/>
   }
+  
+  
   onRemove = () => {
     if (this.state.numberClicked > 0) {
       this.setState({ numberClicked: this.state.numberClicked - 1 });
@@ -30,20 +39,13 @@ class HornedBeasts extends React.Component {
       this.setState({ isFav: true })
     }
   }
- 
-  
-  
-  
-  
+   
   render() {
     return(
      <>
-       {/* <h2>{this.props.title}</h2>
-        <img src={this.props.image_url} alt={this.props.keyword} title={this.props.title} onClick={this.onAdd}></img>
-        <p>{this.props.description}</p>     
-        <p>clicks: {this.state.numberClicked} </p>  */}
-    
+        
     <div className="m-2">
+      {this.state.showModal ? <SelectedBeast showModal={this.state.showModal} image={this.props.image}/> : '' }
         <Card style={{ width: '18rem' }}>
           <Card.Img variant="top" src={this.props.image_url} onClick={this.onAdd}/>
           <Card.Body>
