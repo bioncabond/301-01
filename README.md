@@ -1,26 +1,19 @@
-# Getting Started with Lab II
+# Getting Started with Lab 3
 
 # Bionca Bond
 
 # Horned Beasts
 
-Number and name of feature: Picture Voting Feature 
-
-Put together a tool that allows you to add and subtract heart votes from Horned Beast's pictures. 
+Number and name of feature: Lab 03 - Adding  Modal 
 
 Estimate of time needed to complete: 2 hrs
+Start time: 1:05pm 
 
-Start time: 6:40pm
+Finish time: 4:00pm 
 
-Finish time: 8:01pm
-
-Actual time needed to complete: 1 hr 20 mins
-
-
+Actual time needed to complete: 3 hrs
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
 
 ## Comments 
 
