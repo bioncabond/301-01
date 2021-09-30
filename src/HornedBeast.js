@@ -1,5 +1,5 @@
 import React from 'react';
-// import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import SelectedBeast  from './selectedBeast';
 
@@ -18,12 +18,7 @@ class HornedBeasts extends React.Component {
     //how you set state
      
     this.setState({ numberClicked: this.state.numberClicked + 1 })
-    let showModal2 = false;
-    (this.state.showModal) ? (showModal2=false) : (showModal2=true);
-      this.setState({showModal:showModal2});
-      console.log(this.state);
-    return <SelectedBeast/>
-  }
+      }
   
   
   onRemove = () => {
@@ -45,25 +40,21 @@ class HornedBeasts extends React.Component {
      <>
         
     <div className="m-2">
-      {this.state.showModal ? <SelectedBeast showModal={this.state.showModal} image={this.props.image}/> : '' }
+      {this.state.showModal ? <SelectedBeast showModal={this.state.showModal} image={this.props.image_url}/> : '' }
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.image_url} onClick={this.onAdd}/>
+        <Card.Img variant="top" src={this.props.beast.image_url} onClick={() => this.props.displayAsModal(this.props.beast.title)} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
               {this.props.description}
             </Card.Text>
             <p onClick={this.setFav}>❤️{this.state.numberClicked} </p>
-            {/* Ternary statement is a if/else rolled into one.  evaluation ? true : false  */}
-            
-
-            {/* <Button className="m-1" onClick={this.onAdd}>Add</Button>
-            <Button variant="danger" className="m-1" onClick={this.onRemove}>Remove</Button> */}
+            <Button className="m-1" onClick={this.onAdd}>Add</Button>
+            <Button variant="danger" className="m-1" onClick={this.onRemove} > Remove
+            </Button>
           </Card.Body>
         </Card>
       </div>
-
-
      </>
     )
   }
